@@ -65,6 +65,7 @@ void simulate() {
 		break;
 	case STATE_GAMEPLAY:
 
+		Player::control();
 		World::explore();
 
 		break;

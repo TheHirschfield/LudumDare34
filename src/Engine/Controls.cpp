@@ -44,11 +44,16 @@ bool Controls::poll() {
 
 		}
 
+
+
 		//If (X) Button Is Pressed
 		if (eInput.type == SDL_QUIT)
 		{
 			return 0;
 		}
+
+
+
 	}
 
 	return 1;

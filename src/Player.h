@@ -1,10 +1,12 @@
 
+#include <iostream>
+
 class Player{
 
 public:
 
 	static void render();
-
+	static void control();
 
 private:
 
