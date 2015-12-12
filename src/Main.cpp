@@ -10,6 +10,9 @@ AUTHORS: Oliver Hirschfield
 #include "Engine\Engine.h"
 #include "Engine\Graphics.h"
 
+/* Game Includes  */
+#include "Interface.h"
+
 
 /* Main Fuctions */
 void render();
@@ -46,7 +49,7 @@ void simulate() {
 
 	switch (Engine::state){
 	case STATE_STARTUP:
-
+		Engine::changeState(STATE_GAMEPLAY);
 		break;
 	case STATE_MENU:
 		break;
@@ -73,8 +76,7 @@ void render() {
 	case STATE_MENU:
 		break;
 	case STATE_GAMEPLAY:
-
-
+		Interface::renderUI();
 		break;
 	case STATE_ERROR:
 
