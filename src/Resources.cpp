@@ -23,6 +23,7 @@ GSLTexture Resources::weaponRifle;
 
 GSLTexture Resources::uiHeartFull;
 GSLTexture Resources::uiHeartEmpty;
+GSLTexture Resources::uiGameOver;
 
 
 //Load Resources
@@ -50,6 +51,8 @@ void Resources::load() {
 	//UI
 	uiHeartFull = Texture::load("Assets/UI/HeartFull.png");
 	uiHeartEmpty = Texture::load("Assets/UI/HeartEmpty.png");
+	uiGameOver = Texture::load("Assets/UI/GameOver.png");
+
 
 
 

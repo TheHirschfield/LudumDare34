@@ -28,6 +28,8 @@ public:
 	//UI
 	static GSLTexture uiHeartFull;
 	static GSLTexture uiHeartEmpty;
+	static GSLTexture uiGameOver;
+
 
 	/* Load Files Method */
 	static void load();

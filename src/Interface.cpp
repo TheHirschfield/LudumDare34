@@ -13,6 +13,7 @@ AUTHORS: Oliver Hirschfield
 
 void Interface::renderUI() {
 
+	//Health
 	for (int i = 0; i < 10; i++){
 		if (i < Player::getHealth()){
 			//Display Full Heart
@@ -24,6 +25,10 @@ void Interface::renderUI() {
 
 	}
 
+	//Game Over
+	if (Player::getHealth() == 0){
+		Texture::draw(Resources::uiGameOver, 0, 0);
+	}
 }
 
 

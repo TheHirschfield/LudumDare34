@@ -46,6 +46,13 @@ void Lasers::render() {
 	}
 }
 
+void Lasers::destroy(int l) {
+	currentBullets[l].alive = false;
+	currentBullets[l].posX = 1200;
+	std::cout << "Bullet Destoryed: " << l << "\n";
+
+}
+
 void Lasers::destoryAll() {
 	currentBullets.clear();
 }

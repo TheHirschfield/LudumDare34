@@ -121,7 +121,6 @@ void Player::render() {
 
 }
 
-
 int Player::getHealth() {
 	return health;
 }

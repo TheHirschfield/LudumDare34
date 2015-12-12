@@ -7,6 +7,7 @@ AUTHORS: Oliver Hirschfield
 #include "MrRobot.h"
 #include "Resources.h"
 #include "Lasers.h"
+#include "Player.h"
 
 #include "Engine\Texture.h"
 
@@ -46,9 +47,15 @@ void MrRobot::run(int distance) {
 		}
 
 		for (int l = 0; l < Lasers::getTotal(); l++){
-			if (Lasers::getBulletLocation(l) > entities[i].posX - distance){
+			if (Lasers::getBulletLocation(l) > entities[i].posX - distance && Lasers::getBulletLocation(l) < entities[i].posX - distance + 20 && entities[i].health > 0){
 				entities[i].health = 0;
+				Lasers::destroy(l);
 			}
+		}
+
+		if (entities[i].health > 0 && entities[i].posX < 110 + distance ){
+			Player::damageHealth();
+			entities[i].health = 0;
 		}
 
 	}

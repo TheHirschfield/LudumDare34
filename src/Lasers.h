@@ -19,6 +19,7 @@ public:
 	static void move();
 	static void render();
 
+	static void destroy(int l);
 	static void destoryAll();
 
 	static int getTotal();
