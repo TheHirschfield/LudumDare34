@@ -1,6 +1,7 @@
 
 #include <iostream>
 
+
 class Interface{
 
 public:

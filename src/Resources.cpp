@@ -21,7 +21,7 @@ void Resources::load() {
 
 	//UI
 	uiHeartFull = Texture::load("Assets/UI/HeartFull.png");
-	uiHeartFull = Texture::load("Assets/UI/HeartEmpty.png");
+	uiHeartEmpty = Texture::load("Assets/UI/HeartEmpty.png");
 
 
 

@@ -9,11 +9,16 @@ class Player{
 
 public:
 
+	//Reset Player Data
 	static void reset();
 
+	//Do Stuff
 	static void render();
 	static void control();
 	static void move();
+
+	//Access Methods
+	static int getHealth();
 
 private:
 

@@ -86,3 +86,8 @@ void Player::render() {
 	Texture::draw(Resources::playerIdle01, 100 + posX, 480 + posY);
 	
 }
+
+
+int Player::getHealth() {
+	return health;
+}
