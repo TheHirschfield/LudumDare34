@@ -13,7 +13,7 @@ AUTHORS: Oliver Hirschfield
 #include "Engine\Timers.h"
 
 //Stats
-int Player::health = 10;
+int Player::health = 3;
 int Player::power = 1;
 
 //Actions
@@ -33,12 +33,14 @@ int shootCooldown;
 void Player::reset() {
 
 	//Stats
-	health = 10;
+	health = 3;
 	power = 1;
 
 	//Mechanics
 	isJumping = false;
 	isMoving = false;
+
+	jumpCounter = 0;
 
 	//Positions
 	posX = 0, posY = 0;
@@ -49,22 +51,21 @@ void Player::reset() {
 void Player::control() {
 
 	//Jumping
-	if (Controls::currentKeyStates[SDL_SCANCODE_SPACE] && !isJumping){
+	if (Controls::currentKeyStates[SDL_SCANCODE_SPACE] && !isJumping && Player::getHealth() > 0){
 		isJumping = true;
 		jumpStartTime = Timers::getTime();
 		std::cout << "Jump. \n";
 	}
 
 	//Shooting
-	if (Controls::isMouseButtonDown(1) && shootCooldown == 0){
+	if (Controls::isMouseButtonDown(1) && shootCooldown == 0 && Player::getHealth() > 0){
 		if (!isJumping && !isMoving){
 			Lasers::add(16);
 			shootCooldown = 15;
 			std::cout << "Shoot.\n";
 		}
 	}
-	
-
+	 
 	if (shootCooldown > 0){
 		shootCooldown--;
 	}
@@ -95,7 +96,7 @@ void Player::move() {
 		}
 	}
 
-	if (health == 0){
+	if (health <= 0){
 		switch (deathType){
 		case 1:
 			if (posY < 720){

@@ -32,7 +32,7 @@ void MrRobot::render(int distance) {
 	
 	for (int i = 0; i < entities.size(); i++){
 
-		if (entities[i].health > 0){
+		if (entities[i].health > 0 && entities[i].posX - distance < 1300){
 			Texture::draw(Resources::enemyRobot, entities[i].posX - distance, entities[i].posY, 1.0);
 		}
 	}
@@ -47,19 +47,22 @@ void MrRobot::run(int distance) {
 		}
 
 		for (int l = 0; l < Lasers::getTotal(); l++){
-			if (Lasers::getBulletLocation(l) > entities[i].posX - distance && Lasers::getBulletLocation(l) < entities[i].posX - distance + 20 && entities[i].health > 0){
+			if (Lasers::getBulletLocation(l) > entities[i].posX - distance && Lasers::getBulletLocation(l) < entities[i].posX - distance + 50 && entities[i].health > 0){
 				entities[i].health = 0;
 				Lasers::destroy(l);
 			}
 		}
 
-		if (entities[i].health > 0 && entities[i].posX < 110 + distance ){
+		if (entities[i].health > 0 && entities[i].posX < 110 + distance  && Player::getHealth() > 0){
 			Player::damageHealth();
+			Player::setDeath(2);
 			entities[i].health = 0;
+			
 		}
 
 	}
+}
 
-
-
+void MrRobot::killAll() {
+	entities.clear();
 }

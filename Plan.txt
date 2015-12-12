@@ -2,9 +2,11 @@ Theme: Two Button Controls
 
 STILL TODO:
 
-- Death State
-- Win Level State
-- Different Coloured Lasers
+- Death State DONE!
+- Win Level State HOORAY!
+- Different Coloured Lasers DONE!
+
+
 
 THE ORIGINAL PLAN:
 

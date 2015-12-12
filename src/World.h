@@ -29,6 +29,11 @@ public:
 	static void explore();
 	static void render();
 
+	static bool levelFinished();
+	static bool gameFinished();
+
+	static int getLevelNumber();
+
 	static int getEnemiesSpawned();
 
 private:
@@ -38,6 +43,6 @@ private:
 	static float distance;
 
 	static bool endLevel;
-
+	static bool gameWon;
 
 };

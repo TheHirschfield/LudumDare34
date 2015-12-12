@@ -10,9 +10,14 @@ public:
 
 	//Objects
 	static GSLTexture pitFall;
+	static GSLTexture pitFallMed;
+	static GSLTexture pitFallLarge;
 
 	//Entities
 	static GSLTexture bulletRed;
+	static GSLTexture bulletBlue;
+	static GSLTexture bulletGreen;
+
 
 	//Enemies
 	static GSLTexture enemyRobot;
@@ -29,6 +34,10 @@ public:
 	static GSLTexture uiHeartFull;
 	static GSLTexture uiHeartEmpty;
 	static GSLTexture uiGameOver;
+	static GSLTexture uiNextLevel;
+	static GSLTexture uiYouWon;
+
+
 
 
 	/* Load Files Method */

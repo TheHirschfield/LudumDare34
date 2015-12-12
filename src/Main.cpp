@@ -9,6 +9,8 @@ AUTHORS: Oliver Hirschfield
 /* Engine Includes */
 #include "Engine\Engine.h"
 #include "Engine\Graphics.h"
+#include "Engine\Text.h"
+
 
 /* Game Includes  */
 #include "Resources.h"
@@ -28,6 +30,8 @@ int main(int argc, char *argv[]) {
 	//Set Up Windows
 	Graphics::createSDLVideoContext();
 	Graphics::createNewWindow("Ludum Dare 34", 1240, 720);
+
+	Text::loadFonts();
 
 	//Load Graphical Resources
 	Resources::load();

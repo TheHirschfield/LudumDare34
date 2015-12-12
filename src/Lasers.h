@@ -5,6 +5,7 @@
 #include <fstream>
 
 struct bullet{
+	int color;
 	float posX;
 	float speed;
 	bool alive;

@@ -21,6 +21,7 @@ public:
 	static void render(int distance);
 	static void run(int distance);
 
+	static void killAll();
 
 private:
 
