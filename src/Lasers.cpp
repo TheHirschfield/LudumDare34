@@ -41,7 +41,7 @@ void Lasers::render() {
 	
 	for (int i = 0; i < currentBullets.size(); i++){
 		if (currentBullets[i].alive){
-			Texture::draw(Resources::bulletRed, currentBullets[i].posX, 470);
+			Texture::draw(Resources::bulletRed, currentBullets[i].posX, 490);
 		}
 	}
 }

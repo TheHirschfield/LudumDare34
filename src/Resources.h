@@ -14,8 +14,16 @@ public:
 	//Entities
 	static GSLTexture bulletRed;
 
+	//Enemies
+	static GSLTexture enemyRobot;
+
+
 	//Player
 	static GSLTexture playerIdle01;
+
+	//Weapons
+	static GSLTexture weaponRifle;
+
 
 	//UI
 	static GSLTexture uiHeartFull;

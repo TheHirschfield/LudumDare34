@@ -10,22 +10,26 @@ struct level{
 	float speed;
 	std::vector<int> data;
 	std::vector<int> objects;
+	std::vector<int> enemies;
+
 };
 
 class World{
 
 public:
 
-	static level create(int l, float s, std::vector<int> d, std::vector<int> o);
+	static level create(int l, float s, std::vector<int> d, std::vector<int> o, std::vector<int> e);
 
 	static std::vector<int> readLevel(std::string file);
 	static std::vector<int> readObjects(std::string file);
-
+	static std::vector<int> readEnemies(std::string file);
 
 	static bool set(int l);
 
 	static void explore();
 	static void render();
+
+	static int getEnemiesSpawned();
 
 private:
 

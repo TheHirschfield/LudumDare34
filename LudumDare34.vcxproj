@@ -75,6 +75,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Enemies.cpp" />
     <ClCompile Include="src\Engine\Audio.cpp" />
     <ClCompile Include="src\Engine\Controls.cpp" />
     <ClCompile Include="src\Engine\Engine.cpp" />
@@ -87,12 +88,14 @@
     <ClCompile Include="src\Interface.cpp" />
     <ClCompile Include="src\Lasers.cpp" />
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\MrRobot.cpp" />
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\Resources.cpp" />
     <ClCompile Include="src\Pits.cpp" />
     <ClCompile Include="src\World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Enemies.h" />
     <ClInclude Include="src\Engine\Audio.h" />
     <ClInclude Include="src\Engine\Controls.h" />
     <ClInclude Include="src\Engine\Engine.h" />
@@ -104,6 +107,7 @@
     <ClInclude Include="src\Engine\Window.h" />
     <ClInclude Include="src\Interface.h" />
     <ClInclude Include="src\Lasers.h" />
+    <ClInclude Include="src\MrRobot.h" />
     <ClInclude Include="src\Pits.h" />
     <ClInclude Include="src\Player.h" />
     <ClInclude Include="src\Resources.h" />

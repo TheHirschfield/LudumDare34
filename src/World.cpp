@@ -8,6 +8,7 @@ AUTHORS: Oliver Hirschfield
 #include "World.h"
 #include "Resources.h"
 #include "Player.h"
+#include "Enemies.h"
 #include "Pits.h"
 
 #include "Engine\Texture.h"
@@ -16,10 +17,12 @@ int World::levelNumber = 0;
 level World::levelData;
 float World::distance = 0.0;
 
+int distanceTraveled = 1;
+
 bool World::endLevel = false;
 
 
-level World::create(int l, float s, std::vector<int> d, std::vector<int> o) {
+level World::create(int l, float s, std::vector<int> d, std::vector<int> o, std::vector<int> e) {
 
 	level temp;
 
@@ -28,6 +31,7 @@ level World::create(int l, float s, std::vector<int> d, std::vector<int> o) {
 
 	temp.data = d;
 	temp.objects = o;
+	temp.enemies = e;
 
 	return temp;
 }
@@ -82,7 +86,36 @@ std::vector<int> World::readObjects(std::string file) {
 	return temp;
 }
 
+std::vector<int> World::readEnemies(std::string file) {
+
+	std::string filename = "Assets/Levels/" + file + "/Enemies.txt";
+
+	//Open File
+	std::ifstream f(filename);
+
+	std::string input;
+	std::vector<int> temp;
+
+	int readingMode = 0;
+
+	//Reads Line By Line
+	while (std::getline(f, input)){
+
+		if (readingMode == 0){
+			temp.push_back(std::stoi(input));
+		}
+	}
+
+	f.close();
+
+	return temp;
+}
+
+
 bool World::set(int l) {
+
+	//Reset Player Info
+	Player::reset();
 
 	levelNumber = l;
 
@@ -90,7 +123,7 @@ bool World::set(int l) {
 
 	switch (l){
 	case 1:
-		levelData = create(20, 5, readLevel("1"), readObjects("1"));
+		levelData = create(20, 5, readLevel("1"), readObjects("1"), readEnemies("1"));
 		break;
 	default:
 		return 0;
@@ -107,6 +140,9 @@ void World::explore() {
 	//Move Tileset
 	if (distance < ((levelData.data.size()-2) * 620)){
 		distance += levelData.speed;
+
+		distanceTraveled = distance / 1280;
+
 	} else if (endLevel == false){
 		Player::setMoving(true);
 		endLevel = true;
@@ -126,6 +162,13 @@ void World::explore() {
 			}
 		}
 	}
+
+
+	//Enemy Spawn
+	for (int i = 0; i < levelData.data.size(); i++){
+
+	}
+
 }
 
 
@@ -152,6 +195,22 @@ void World::render() {
 		}
 			
 	}
-	 
+	
+}
 
+
+int World::getEnemiesSpawned() {
+
+	//Temp Variable
+	int total = 0;
+
+	//Adding For Loop
+	for(int i = 0; i < distanceTraveled; i++){
+ 		if (levelData.enemies[i] != 0){
+			total++;
+		}
+	}
+
+	//Return
+	return total;
 }

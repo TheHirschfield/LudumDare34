@@ -15,7 +15,11 @@ GSLTexture Resources::pitFall;
 
 GSLTexture Resources::bulletRed;
 
+GSLTexture Resources::enemyRobot;
+
 GSLTexture Resources::playerIdle01;
+
+GSLTexture Resources::weaponRifle;
 
 GSLTexture Resources::uiHeartFull;
 GSLTexture Resources::uiHeartEmpty;
@@ -34,8 +38,14 @@ void Resources::load() {
 	//Entities
 	bulletRed = Texture::load("Assets/Sprites/Entities/BulletRed.png");
 
+	//Enemies
+	enemyRobot = Texture::load("Assets/Sprites/Entities/MrRobot.png");
+
 	//Player
 	playerIdle01 = Texture::load("Assets/Sprites/Player/PlayerIdle.png");
+
+	//Weapon
+	weaponRifle = Texture::load("Assets/Sprites/Player/Weapons/Gun1.png");
 
 	//UI
 	uiHeartFull = Texture::load("Assets/UI/HeartFull.png");

@@ -32,7 +32,7 @@ void Player::reset() {
 
 	//Stats
 	health = 10;
-	power = 5;
+	power = 1;
 
 	//Mechanics
 	isJumping = false;
@@ -95,7 +95,15 @@ void Player::move() {
 
 void Player::render() {
 
+	//Render Player
 	Texture::draw(Resources::playerIdle01, 100 + posX, 720 - 156 - 120 + posY, 1.0);
+
+	//Render Weapon
+	if (power == 1){ //Normal Laser Rifle
+		Texture::draw(Resources::weaponRifle, 100 + posX, 720 - 156 - 120 + posY, 1.0);
+
+	}
+
 
 }
 
