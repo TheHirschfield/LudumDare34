@@ -9,6 +9,7 @@ AUTHORS: Oliver Hirschfield
 /* Engine Includes */
 #include "Engine\Engine.h"
 #include "Engine\Graphics.h"
+#include "Engine\Audio.h"
 #include "Engine\Text.h"
 
 
@@ -32,6 +33,8 @@ int main(int argc, char *argv[]) {
 	Graphics::createNewWindow("Ludum Dare 34", 1240, 720);
 
 	Text::loadFonts();
+
+	Audio::initAudio();
 
 	//Load Graphical Resources
 	Resources::load();
@@ -64,6 +67,8 @@ void simulate() {
 
 		World::set(1);
 		Engine::changeState(STATE_GAMEPLAY);
+
+		Audio::playMusic("Assets/Sounds/Mission1.wav");
 
 		break;
 	case STATE_MENU:

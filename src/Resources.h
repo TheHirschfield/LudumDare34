@@ -5,8 +5,11 @@ public:
 
 	/* Actual Files In Storage */
 	//Background
+	static GSLTexture nightSky;
 	static GSLTexture factoryBackground01;
 	static GSLTexture factoryBackground02;
+	static GSLTexture factoryBackground03;
+	static GSLTexture factoryBackground04;
 
 	//Objects
 	static GSLTexture pitFall;

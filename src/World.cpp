@@ -14,6 +14,7 @@ AUTHORS: Oliver Hirschfield
 #include "Pits.h"
 
 #include "Engine\Texture.h"
+#include "Engine\Audio.h"
 #include "Engine\Controls.h"
 
 int World::levelNumber = 0;
@@ -189,8 +190,10 @@ void World::explore() {
 	} else if (endLevel == false && Player::getHealth() != 0){
 		Player::setMoving(true);
 		endLevel = true;
+
 		if (levelNumber == 5){
 			gameWon = true;
+			Audio::playEffect("Assets/Sounds/Win.wav");
 		}
 
 	} else if (Player::getHealth() != 0){
@@ -273,6 +276,12 @@ void World::render() {
 				break;
 			case 2:
 				Texture::draw(Resources::factoryBackground02, 640 * i - distance, 0);
+				break;
+			case 3:
+				Texture::draw(Resources::factoryBackground03, 640 * i - distance, 0);
+				break;
+			case 4:
+				Texture::draw(Resources::factoryBackground04, 640 * i - distance, 0);
 				break;
 			}
 		}

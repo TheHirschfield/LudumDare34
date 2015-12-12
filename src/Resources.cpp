@@ -10,6 +10,9 @@ AUTHORS: Oliver Hirschfield
 //Declare Resources
 GSLTexture Resources::factoryBackground01;
 GSLTexture Resources::factoryBackground02;
+GSLTexture Resources::factoryBackground03;
+GSLTexture Resources::factoryBackground04;
+
 
 GSLTexture Resources::pitFall;
 GSLTexture Resources::pitFallMed;
@@ -41,6 +44,8 @@ void Resources::load() {
 	//Backgrounds
 	factoryBackground01 = Texture::load("Assets/Sprites/Backgrounds/FactoryBackground01.png");
 	factoryBackground02 = Texture::load("Assets/Sprites/Backgrounds/FactoryBackground02.png");
+	factoryBackground03 = Texture::load("Assets/Sprites/Backgrounds/FactoryBackground03.png");
+	factoryBackground04 = Texture::load("Assets/Sprites/Backgrounds/FactoryBackground04.png");
 
 	//Objects
 	pitFall = Texture::load("Assets/Sprites/Objects/Pitfall.png");

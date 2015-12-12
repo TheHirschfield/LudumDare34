@@ -9,6 +9,7 @@ AUTHORS: Oliver Hirschfield
 #include "Lasers.h"
 
 #include "Engine\Texture.h"
+#include "Engine\Audio.h"
 #include "Engine\Controls.h"
 #include "Engine\Timers.h"
 
@@ -45,6 +46,7 @@ void Player::reset() {
 	//Positions
 	posX = 0, posY = 0;
 
+	Audio::playEffect("Assets/Sounds/Port.wav");
 }
 
 
@@ -62,6 +64,7 @@ void Player::control() {
 		if (!isJumping && !isMoving){
 			Lasers::add(16);
 			shootCooldown = 15;
+			Audio::playEffect("Assets/Sounds/Rifle.wav");
 			std::cout << "Shoot.\n";
 		}
 	}
@@ -99,6 +102,9 @@ void Player::move() {
 	if (health <= 0){
 		switch (deathType){
 		case 1:
+			if (posY == 0){
+				Audio::playEffect("Assets/Sounds/Scream.wav");
+			}
 			if (posY < 720){
 				posY += 8;
 			}
