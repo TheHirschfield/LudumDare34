@@ -7,6 +7,9 @@ public:
 	//Background
 	static GSLTexture factoryBackground01;
 
+	//Player
+	static GSLTexture playerIdle01;
+
 	//UI
 	static GSLTexture MenuButton01;
 
