@@ -4,7 +4,10 @@
 //Declare Resources
 GSLTexture Resources::factoryBackground01;
 GSLTexture Resources::playerIdle01;
-GSLTexture Resources::MenuButton01;
+
+GSLTexture Resources::uiHeartFull;
+GSLTexture Resources::uiHeartEmpty;
+
 
 
 //Load Resources
@@ -16,9 +19,10 @@ void Resources::load() {
 	//Player
 	playerIdle01 = Texture::load("Assets/Sprites/Player/PlayerIdle.png");
 
-
 	//UI
-	MenuButton01 = Texture::load("Assets/UI/MenuBarBlank.png");
+	uiHeartFull = Texture::load("Assets/UI/HeartFull.png");
+	uiHeartFull = Texture::load("Assets/UI/HeartEmpty.png");
+
 
 
 }

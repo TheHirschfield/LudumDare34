@@ -11,7 +11,8 @@ public:
 	static GSLTexture playerIdle01;
 
 	//UI
-	static GSLTexture MenuButton01;
+	static GSLTexture uiHeartFull;
+	static GSLTexture uiHeartEmpty;
 
 	/* Load Files Method */
 	static void load();

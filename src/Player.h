@@ -9,6 +9,8 @@ class Player{
 
 public:
 
+	static void reset();
+
 	static void render();
 	static void control();
 	static void move();

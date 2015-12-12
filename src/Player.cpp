@@ -6,8 +6,8 @@
 #include "Engine\Timers.h"
 
 //Stats
-int Player::health;
-int Player::power;
+int Player::health = 10;
+int Player::power = 5;
 
 //Actions
 bool Player::isJumping;
@@ -18,6 +18,23 @@ float Player::posX, Player::posY;
 
 int jumpCounter;
 time_t jumpStartTime;
+
+
+
+void Player::reset() {
+
+	//Stats
+	health = 10;
+	power = 5;
+
+	//Mechanics
+	isJumping = false;
+	isMoving = false;
+
+	//Positions
+	posX = 0, posY = 0;
+
+}
 
 
 void Player::control() {
