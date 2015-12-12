@@ -64,14 +64,16 @@ void simulate() {
 
 	switch (Engine::state){
 	case STATE_STARTUP:
-
-		World::set(1);
-		Engine::changeState(STATE_GAMEPLAY);
-
-		Audio::playMusic("Assets/Sounds/Mission1.wav");
-
+		Audio::playMusic("Assets/Sounds/Menu.wav");
+		Engine::changeState(STATE_MENU);
 		break;
 	case STATE_MENU:
+		Interface::controlUI();
+		break;
+	case STATE_LOADING:
+		World::set(1);
+		Audio::playMusic("Assets/Sounds/Mission1.wav");
+		Engine::changeState(STATE_GAMEPLAY);
 		break;
 	case STATE_GAMEPLAY:
 
@@ -100,6 +102,7 @@ void render() {
 
 		break;
 	case STATE_MENU:
+		Interface::renderUI();
 		break;
 	case STATE_GAMEPLAY:
 

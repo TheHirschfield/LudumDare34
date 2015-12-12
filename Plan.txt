@@ -6,8 +6,6 @@ STILL TODO:
 - Win Level State HOORAY!
 - Different Coloured Lasers DONE!
 
-
-
 THE ORIGINAL PLAN:
 
 - Buttons (Jump,Shoot)
@@ -15,8 +13,6 @@ THE ORIGINAL PLAN:
 - Slide scrolling
 - AI (enemies) comes from right
 - Jump over objects
-- Different Weapons
-- Different "Worlds" with different "parts" 
 - Health Points
 
 TickList (HOURS):

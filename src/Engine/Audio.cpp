@@ -43,12 +43,12 @@ void Audio::playEffect(std::string file) {
 }
 
 void Audio::playMusic(std::string file) {
-	if (Mix_PlayingMusic() == 0)
-	{
+	//if (Mix_PlayingMusic() == 0)
+	//{
 		Mix_Music* effect;
 		effect = Mix_LoadMUS(file.c_str());
 		Mix_PlayMusic(effect, -1);
 
 		Mix_VolumeMusic((int)((musicVolume * 12) * ((float)generalVolume / 10.f)));
-	}
+	//}
 }

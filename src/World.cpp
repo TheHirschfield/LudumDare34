@@ -10,9 +10,11 @@ AUTHORS: Oliver Hirschfield
 #include "Player.h"
 #include "MrRobot.h"
 #include "Lasers.h"
+#include "Effects.h"
 
 #include "Pits.h"
 
+#include "Engine\Engine.h"
 #include "Engine\Texture.h"
 #include "Engine\Audio.h"
 #include "Engine\Controls.h"
@@ -155,7 +157,7 @@ bool World::set(int l) {
 
 	switch (l){
 	case 1:
-		levelData = create(10, 7, readLevel("1"), readObjects("1"), readEnemies("1"));
+		levelData = create(15, 7, readLevel("1"), readObjects("1"), readEnemies("1"));
 		break;
 	case 2:
 		levelData = create(20, 8, readLevel("2"), readObjects("2"), readEnemies("2"));
@@ -261,6 +263,12 @@ void World::explore() {
 		World::set(levelNumber);
 	}
 
+	//IF WIN GO BACK TO MENU IF SPACE
+	if (Controls::currentKeyStates[SDL_SCANCODE_SPACE] && World::gameFinished() && Player::getHealth() > 0){
+		Engine::changeState(STATE_MENU);
+	}
+
+
 }
 
 
@@ -282,6 +290,18 @@ void World::render() {
 				break;
 			case 4:
 				Texture::draw(Resources::factoryBackground04, 640 * i - distance, 0);
+				break;
+			case 5:
+				Texture::draw(Resources::factoryBackground05, 640 * i - distance, 0);
+				break;
+			case 6:
+				Texture::draw(Resources::factoryBackground06, 640 * i - distance, 0);
+				break;
+			case 7:
+				Texture::draw(Resources::factoryBackground07, 640 * i - distance, 0);
+				break;
+			case 9:
+				Texture::draw(Resources::factoryBackground09, 640 * i - distance, 0);
 				break;
 			}
 		}
@@ -307,6 +327,9 @@ void World::render() {
 
 	//Robot Rendering
 	MrRobot::render(distance);
+
+	Effects::render();
+
 }
 
 bool World::levelFinished() {

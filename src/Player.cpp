@@ -7,6 +7,7 @@ AUTHORS: Oliver Hirschfield
 #include "Player.h"
 #include "Resources.h"
 #include "Lasers.h"
+#include "Effects.h"
 
 #include "Engine\Texture.h"
 #include "Engine\Audio.h"
@@ -117,8 +118,12 @@ void Player::move() {
 void Player::render() {
 
 	//Render Player
-	Texture::draw(Resources::playerIdle01, 100 + posX, 720 - 156 - 120 + posY, 1.0);
+	if (Effects::getHurtTimer() ==  0){
+		Texture::draw(Resources::playerIdle01, 100 + posX, 720 - 156 - 120 + posY, 1.0);
+	} else{
+		Texture::draw(Resources::playerHurt, 100 + posX, 720 - 156 - 120 + posY, 1.0);
 
+	}
 	//Render Weapon
 	if (power == 1){ //Normal Laser Rifle
 		Texture::draw(Resources::weaponRifle, 100 + posX, 720 - 156 - 120 + posY, 1.0);
