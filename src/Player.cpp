@@ -14,7 +14,7 @@ AUTHORS: Oliver Hirschfield
 
 //Stats
 int Player::health = 10;
-int Player::power = 5;
+int Player::power = 1;
 
 //Actions
 bool Player::isJumping;

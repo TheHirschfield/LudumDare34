@@ -16,7 +16,7 @@ AUTHORS: Oliver Hirschfield
 void Interface::renderUI() {
 
 	for (int i = 0; i < 10; i++){
-		if (i <= Player::getHealth()){
+		if (i < Player::getHealth()){
 			//Display Full Heart
 			Texture::draw(Resources::uiHeartFull, 10 + i*36, 10);
 		} else{

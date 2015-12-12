@@ -158,7 +158,7 @@ void World::explore() {
 			if (distance > (620 * i) + 180 && distance < (620 * i) + 210){
 				if (!Player::getJumping()){
 					Player::damageHealth();
-					std::cout << "Damage at " << i << "!\n";
+					std::cout << "Damage at " << Player::getHealth() << "!\n";
 				}
 			}
 		}
