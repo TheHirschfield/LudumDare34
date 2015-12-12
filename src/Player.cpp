@@ -26,7 +26,7 @@ float Player::posX, Player::posY;
 int jumpCounter;
 time_t jumpStartTime;
 
-
+int shootCooldown;
 
 void Player::reset() {
 
@@ -54,11 +54,16 @@ void Player::control() {
 	}
 
 	//Shooting
-	if (Controls::isMouseButtonDown(1)){
+	if (Controls::isMouseButtonDown(1) && shootCooldown == 0){
 		Lasers::add(16);
+		shootCooldown = 15;
 		std::cout << "Shoot.\n";
 	}
+	
 
+	if (shootCooldown > 0){
+		shootCooldown--;
+	}
 }
 
 void Player::move() {
@@ -83,7 +88,6 @@ void Player::move() {
 	if (isMoving){
 		if (posX < 1000){
 			posX += 8.0;
-
 		}
 	}
 
@@ -91,7 +95,7 @@ void Player::move() {
 
 void Player::render() {
 
-	Texture::draw(Resources::playerIdle01, 100 + posX, 480 + posY);
+	Texture::draw(Resources::playerIdle01, 100 + posX, 720 - 156 - 120 + posY, 1.0);
 
 }
 

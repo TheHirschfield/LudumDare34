@@ -29,7 +29,7 @@ void Lasers::move() {
 
 	for (int i = 0; i < currentBullets.size(); i++){
 		if (currentBullets[i].posX < 1200 && currentBullets[i].alive){
-			currentBullets[i].posX += 4.0;
+			currentBullets[i].posX += currentBullets[i].speed;
 		} else if (currentBullets[i].alive){
 			currentBullets[i].alive = false;
 			std::cout << "Bullet Destoryed: " << currentBullets.size() << "\n";
@@ -41,7 +41,7 @@ void Lasers::render() {
 	
 	for (int i = 0; i < currentBullets.size(); i++){
 		if (currentBullets[i].alive){
-			Texture::draw(Resources::bulletRed, currentBullets[i].posX, 580);
+			Texture::draw(Resources::bulletRed, currentBullets[i].posX, 470);
 		}
 	}
 }

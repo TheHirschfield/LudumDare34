@@ -11,6 +11,6 @@ AUTHORS: Oliver Hirschfield
 
 void Pits::render(int x, int distance) {
 
-	Texture::draw(Resources::pitFall, (620 * x)-278 - distance, 610);
+	Texture::draw(Resources::pitFall, (620 * x) - distance, 720-214);
 
 }

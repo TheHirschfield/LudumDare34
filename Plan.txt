@@ -9,7 +9,8 @@ Theme: Two Button Controls
 - Different "Worlds" with different "parts" 
 - Health Points
 
-TickList:
-
+TickList (HOURS):
 - Buttons - ADDED (2)
 - Slide Scrolling Background Added (1)
+- Health Point (3)
+- Jump Over Objects (4)

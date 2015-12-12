@@ -118,7 +118,7 @@ void World::explore() {
 		//Pitfall Collision
 		if (levelData.objects[i] == 1){
 			//if (distance >(640 * (i-1)) - 16 && distance < (640 * (i-1)) + 40 - 32){
-			if (distance >(620 * i) - 380 && distance < (620 * i) - 350){
+			if (distance > (620 * i) + 180 && distance < (620 * i) + 210){
 				if (!Player::getJumping()){
 					Player::damageHealth();
 					std::cout << "Damage at " << i << "!\n";
