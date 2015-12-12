@@ -96,9 +96,6 @@
     <ClCompile Include="src\MrRobot.cpp">
       <Filter>Source Files\Game\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="src\Enemies.cpp">
-      <Filter>Source Files\Game\Entities</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine\Audio.h">
@@ -147,9 +144,6 @@
       <Filter>Header Files\Game\Entites</Filter>
     </ClInclude>
     <ClInclude Include="src\MrRobot.h">
-      <Filter>Header Files\Game\Entites</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Enemies.h">
       <Filter>Header Files\Game\Entites</Filter>
     </ClInclude>
   </ItemGroup>

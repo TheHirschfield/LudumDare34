@@ -75,7 +75,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Enemies.cpp" />
     <ClCompile Include="src\Engine\Audio.cpp" />
     <ClCompile Include="src\Engine\Controls.cpp" />
     <ClCompile Include="src\Engine\Engine.cpp" />
@@ -95,7 +94,6 @@
     <ClCompile Include="src\World.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Enemies.h" />
     <ClInclude Include="src\Engine\Audio.h" />
     <ClInclude Include="src\Engine\Controls.h" />
     <ClInclude Include="src\Engine\Engine.h" />

@@ -1,21 +1,30 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <fstream>
 
-
-class MrRobot{
-
-public:
-
-	MrRobot();
-
-	void render();
-
-private:
+struct Robot{
 
 	int health;
 	int damage;
 
 	int posX, posY;
 
+};
 
+class MrRobot{
+
+public:
+
+	static void add(int posX);
+
+	static void render(int distance);
+	static void run(int distance);
+
+
+private:
+
+	static std::vector<Robot> entities;
 
 };
 

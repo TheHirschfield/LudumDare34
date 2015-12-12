@@ -49,3 +49,19 @@ void Lasers::render() {
 void Lasers::destoryAll() {
 	currentBullets.clear();
 }
+
+
+int Lasers::getTotal() {
+	return currentBullets.size();
+}
+
+int Lasers::getBulletLocation(int x) {
+
+	if (x < currentBullets.size()){
+		if (currentBullets[x].alive){
+			return currentBullets[x].posX;
+		}
+	}
+
+	return 0;
+}

@@ -6,23 +6,53 @@ AUTHORS: Oliver Hirschfield
 
 #include "MrRobot.h"
 #include "Resources.h"
+#include "Lasers.h"
 
 #include "Engine\Texture.h"
 
-MrRobot::MrRobot() {
+std::vector<Robot> MrRobot::entities;
 
-	health = 20;
-	damage = 1;
+void MrRobot::add(int posX) {
 
-	posX = 1000;
-	posY = 450;
+	Robot temp;
 
+	temp.health = 20;
+	temp.damage = 1;
+
+	temp.posX = posX;
+	temp.posY = 450;
+
+
+	entities.push_back(temp);
 }
 
 
-void MrRobot::render() {
-	if (health > 0){
-		Texture::draw(Resources::enemyRobot, posX, posY, 1.0);
+void MrRobot::render(int distance) {
+	
+	for (int i = 0; i < entities.size(); i++){
+
+		if (entities[i].health > 0){
+			Texture::draw(Resources::enemyRobot, entities[i].posX - distance, entities[i].posY, 1.0);
+		}
 	}
 }
 
+void MrRobot::run(int distance) {
+	
+	for (int i = 0; i < entities.size(); i++){
+
+		if (entities[i].health > 0 && entities[i].posX > - 100){
+			entities[i].posX -= 1.0;
+		}
+
+		for (int l = 0; l < Lasers::getTotal(); l++){
+			if (Lasers::getBulletLocation(l) > entities[i].posX - distance){
+				entities[i].health = 0;
+			}
+		}
+
+	}
+
+
+
+}

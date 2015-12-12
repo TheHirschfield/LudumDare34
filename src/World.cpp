@@ -8,7 +8,7 @@ AUTHORS: Oliver Hirschfield
 #include "World.h"
 #include "Resources.h"
 #include "Player.h"
-#include "Enemies.h"
+#include "MrRobot.h"
 #include "Pits.h"
 
 #include "Engine\Texture.h"
@@ -96,14 +96,15 @@ std::vector<int> World::readEnemies(std::string file) {
 	std::string input;
 	std::vector<int> temp;
 
-	int readingMode = 0;
+	int lineCount = 1;
 
 	//Reads Line By Line
 	while (std::getline(f, input)){
-
-		if (readingMode == 0){
+		if (input[0] == '1'){
 			temp.push_back(std::stoi(input));
+			MrRobot::add(lineCount * 620);
 		}
+		lineCount++;
 	}
 
 	f.close();
@@ -163,11 +164,8 @@ void World::explore() {
 		}
 	}
 
-
 	//Enemy Spawn
-	for (int i = 0; i < levelData.data.size(); i++){
-
-	}
+	MrRobot::run(distance);
 
 }
 
@@ -193,11 +191,14 @@ void World::render() {
 			Pits::render(i, distance);
 			break;
 		}
-			
+		
+
+		//Robot Rendering
+		MrRobot::render(distance);
+
 	}
 	
 }
-
 
 int World::getEnemiesSpawned() {
 

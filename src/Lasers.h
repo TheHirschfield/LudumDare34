@@ -21,6 +21,9 @@ public:
 
 	static void destoryAll();
 
+	static int getTotal();
+	static int getBulletLocation(int x);
+
 private:
 
 	static std::vector<bullet> currentBullets;
