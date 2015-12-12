@@ -3,11 +3,12 @@
 
 //Declare Resources
 GSLTexture Resources::factoryBackground01;
+GSLTexture Resources::factoryBackground02;
+
 GSLTexture Resources::playerIdle01;
 
 GSLTexture Resources::uiHeartFull;
 GSLTexture Resources::uiHeartEmpty;
-
 
 
 //Load Resources
@@ -15,6 +16,8 @@ void Resources::load() {
 
 	//Backgrounds
 	factoryBackground01 = Texture::load("Assets/Sprites/Backgrounds/FactoryBackground01.png");
+	factoryBackground02 = Texture::load("Assets/Sprites/Backgrounds/FactoryBackground02.png");
+
 	
 	//Player
 	playerIdle01 = Texture::load("Assets/Sprites/Player/PlayerIdle.png");

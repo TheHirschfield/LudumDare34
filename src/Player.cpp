@@ -69,7 +69,6 @@ void Player::move() {
 			jumpCounter = 0;
 			isJumping = false;
 		}
-		std::cout << Timers::compare(jumpStartTime, Timers::getTime()) << "\n";
 	}
 
 	//Moving Off Screen

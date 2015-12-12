@@ -6,6 +6,8 @@ public:
 	/* Actual Files In Storage */
 	//Background
 	static GSLTexture factoryBackground01;
+	static GSLTexture factoryBackground02;
+
 
 	//Player
 	static GSLTexture playerIdle01;
