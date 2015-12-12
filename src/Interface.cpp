@@ -8,10 +8,8 @@ AUTHORS: Oliver Hirschfield
 #include "Resources.h"
 #include "Player.h"
 
-
 //Engine includes
 #include "Engine\Texture.h"
-
 
 void Interface::renderUI() {
 

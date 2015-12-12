@@ -55,9 +55,11 @@ void Player::control() {
 
 	//Shooting
 	if (Controls::isMouseButtonDown(1) && shootCooldown == 0){
-		Lasers::add(16);
-		shootCooldown = 15;
-		std::cout << "Shoot.\n";
+		if (!isJumping && !isMoving){
+			Lasers::add(16);
+			shootCooldown = 15;
+			std::cout << "Shoot.\n";
+		}
 	}
 	
 
