@@ -1,5 +1,13 @@
 Theme: Two Button Controls
 
+STILL TODO:
+
+- Death State
+- Win Level State
+- Different Coloured Lasers
+
+THE ORIGINAL PLAN:
+
 - Buttons (Jump,Shoot)
 - Rainbow Rapture (Remake - But Better)
 - Slide scrolling
