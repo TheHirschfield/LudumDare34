@@ -80,6 +80,17 @@ void Graphics::createNewWindow(char* setTitle, int setWidth, int setHeight) {
 
 	glEnable(GL_DEPTH_TEST);
 
+	//Change Projection
+	glMatrixMode(GL_PROJECTION);
+	glPushMatrix();
+	glLoadIdentity();
+	//Change to Ortho2D Mode
+	glOrtho(0, Graphics::screenWidth, Graphics::screenHeight, 0, -1, 1);
+	//Change Model Mode
+	glMatrixMode(GL_MODELVIEW);
+	glPushMatrix();
+	glLoadIdentity();
+
 }
 
 //Change 3D Background Color

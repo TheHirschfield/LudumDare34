@@ -84,7 +84,11 @@
     <ClCompile Include="src\Engine\Texture.cpp" />
     <ClCompile Include="src\Engine\Timers.cpp" />
     <ClCompile Include="src\Engine\Window.cpp" />
+    <ClCompile Include="src\Interface.cpp" />
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\Resources.cpp" />
+    <ClCompile Include="src\World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine\Audio.h" />
@@ -96,6 +100,10 @@
     <ClInclude Include="src\Engine\Texture.h" />
     <ClInclude Include="src\Engine\Timers.h" />
     <ClInclude Include="src\Engine\Window.h" />
+    <ClInclude Include="src\Interface.h" />
+    <ClInclude Include="src\Player.h" />
+    <ClInclude Include="src\Resources.h" />
+    <ClInclude Include="src\World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

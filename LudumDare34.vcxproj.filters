@@ -19,6 +19,30 @@
     <Filter Include="Source Files\Engine">
       <UniqueIdentifier>{25c1129c-7ebb-4675-b8b9-6b1423df8b28}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{c46e3906-6a0f-4907-9aee-28564f838412}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game">
+      <UniqueIdentifier>{20d60a16-7a0b-4060-a0b8-1574bd3fb6b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Objects">
+      <UniqueIdentifier>{7dd02117-983f-463b-ab31-04e3cd26de60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Entities">
+      <UniqueIdentifier>{9812d76d-1c3c-465e-bcbb-991dce5055d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\Entites">
+      <UniqueIdentifier>{1eb232b3-20c2-4085-a111-1c4e0590de7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\Objects">
+      <UniqueIdentifier>{48504f8d-27d1-4ff0-8222-ddef68831252}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\World">
+      <UniqueIdentifier>{370afe3f-6312-4747-bfad-6dac4443b159}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\World">
+      <UniqueIdentifier>{6c5390b6-d394-4124-8e81-42701c7e61df}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Engine\Audio.cpp">
@@ -48,8 +72,20 @@
     <ClCompile Include="src\Engine\Graphics.cpp">
       <Filter>Source Files\Engine</Filter>
     </ClCompile>
+    <ClCompile Include="src\Interface.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
     <ClCompile Include="src\Main.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Player.cpp">
+      <Filter>Source Files\Game\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World.cpp">
+      <Filter>Source Files\Game\World</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Resources.cpp">
+      <Filter>Source Files\Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +115,18 @@
     </ClInclude>
     <ClInclude Include="src\Engine\Graphics.h">
       <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Interface.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Player.h">
+      <Filter>Header Files\Game\Entites</Filter>
+    </ClInclude>
+    <ClInclude Include="src\World.h">
+      <Filter>Header Files\Game\World</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resources.h">
+      <Filter>Header Files\Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

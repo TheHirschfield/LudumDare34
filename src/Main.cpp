@@ -11,7 +11,10 @@ AUTHORS: Oliver Hirschfield
 #include "Engine\Graphics.h"
 
 /* Game Includes  */
+#include "Resources.h"
 #include "Interface.h"
+#include "World.h"
+#include "Player.h"
 
 
 /* Main Fuctions */
@@ -20,9 +23,13 @@ void simulate();
 
 int main(int argc, char *argv[]) {
 
+
 	//Set Up Windows
 	Graphics::createSDLVideoContext();
 	Graphics::createNewWindow("Ludum Dare 34", 1240, 720);
+
+	//Load Graphical Resources
+	Resources::load();
 
 	Engine::running = true;
 
@@ -49,12 +56,16 @@ void simulate() {
 
 	switch (Engine::state){
 	case STATE_STARTUP:
+
+		World::set(1);
 		Engine::changeState(STATE_GAMEPLAY);
+
 		break;
 	case STATE_MENU:
 		break;
 	case STATE_GAMEPLAY:
 
+		World::explore();
 
 		break;
 	}
@@ -76,7 +87,13 @@ void render() {
 	case STATE_MENU:
 		break;
 	case STATE_GAMEPLAY:
+
+		World::render();
+
+		Player::render();
+
 		Interface::renderUI();
+
 		break;
 	case STATE_ERROR:
 
