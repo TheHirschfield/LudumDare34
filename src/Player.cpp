@@ -23,6 +23,8 @@ bool Player::isMoving;
 //Positions
 float Player::posX, Player::posY;
 
+int Player::deathType = 0;
+
 int jumpCounter;
 time_t jumpStartTime;
 
@@ -88,8 +90,18 @@ void Player::move() {
 
 	//Moving Off Screen
 	if (isMoving){
-		if (posX < 1000){
+		if (posX < 1200){
 			posX += 8.0;
+		}
+	}
+
+	if (health == 0){
+		switch (deathType){
+		case 1:
+			if (posY < 720){
+				posY += 8;
+			}
+			break;
 		}
 	}
 
@@ -118,6 +130,14 @@ void Player::damageHealth() {
 	if (health > 0){
 		health--;
 	}
+}
+
+void Player::setDeath(int type) {
+	deathType = type;
+}
+
+int Player::getDeath() {
+	return deathType;
 }
 
 bool Player::getJumping() {

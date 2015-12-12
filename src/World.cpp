@@ -139,12 +139,12 @@ bool World::set(int l) {
 void World::explore() {
 	
 	//Move Tileset
-	if (distance < ((levelData.data.size()-2) * 620)){
+	if (distance < ((levelData.data.size()-2) * 620) && Player::getHealth() != 0){
 		distance += levelData.speed;
 
 		distanceTraveled = distance / 1280;
 
-	} else if (endLevel == false){
+	} else if (endLevel == false && Player::getHealth() != 0){
 		Player::setMoving(true);
 		endLevel = true;
 	}
@@ -158,7 +158,12 @@ void World::explore() {
 			if (distance > (620 * i) + 180 && distance < (620 * i) + 210){
 				if (!Player::getJumping()){
 					Player::damageHealth();
-					std::cout << "Damage at " << Player::getHealth() << "!\n";
+					Player::damageHealth();
+
+					if (Player::getHealth() > 0){
+						std::cout << "Damage at " << Player::getHealth() << "!\n";
+						Player::setDeath(1); //Falling Death
+					}
 				}
 			}
 		}

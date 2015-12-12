@@ -39,7 +39,7 @@ void Resources::load() {
 	bulletRed = Texture::load("Assets/Sprites/Entities/BulletRed.png");
 
 	//Enemies
-	enemyRobot = Texture::load("Assets/Sprites/Entities/MrRobot.png");
+	enemyRobot = Texture::load("Assets/Sprites/Entities/Robot1.png");
 
 	//Player
 	playerIdle01 = Texture::load("Assets/Sprites/Player/PlayerIdle.png");

@@ -20,6 +20,11 @@ public:
 	//Access Methods
 	static int getHealth();
 	static void damageHealth();
+
+	static void setDeath(int type);
+	static int getDeath();
+
+
 	static bool getJumping();
 	static void setMoving(bool go);
 
@@ -35,5 +40,8 @@ private:
 
 	//Positions
 	static float posX, posY;
+
+	//Death
+	static int deathType;
 
 };
