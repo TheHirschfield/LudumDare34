@@ -16,6 +16,7 @@ bool Player::isMoving;
 //Positions
 float Player::posX, Player::posY;
 
+int jumpCounter;
 time_t jumpStartTime;
 
 
@@ -40,11 +41,15 @@ void Player::move() {
 	//Jumping
 	if (isJumping){
 
-		if (Timers::compare(jumpStartTime, Timers::getTime()) < 1){
-			posY -= 4.0;
+		if (jumpCounter < 25){
+			posY -= 5.0;
+			jumpCounter++;
 		} else if (posY < 0){
+
 			posY += 4.0;
 		} else{
+			posY = 0;
+			jumpCounter = 0;
 			isJumping = false;
 		}
 		std::cout << Timers::compare(jumpStartTime, Timers::getTime()) << "\n";
