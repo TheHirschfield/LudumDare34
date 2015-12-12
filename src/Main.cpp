@@ -44,7 +44,17 @@ int main(int argc, char *argv[]) {
 
 void simulate() {
 
+	switch (Engine::state){
+	case STATE_STARTUP:
 
+		break;
+	case STATE_MENU:
+		break;
+	case STATE_GAMEPLAY:
+
+
+		break;
+	}
 
 
 }
@@ -56,7 +66,20 @@ void render() {
 
 
 	//RENDER STUFF HERE
+	switch (Engine::state){
+	case STATE_STARTUP:
 
+		break;
+	case STATE_MENU:
+		break;
+	case STATE_GAMEPLAY:
+
+
+		break;
+	case STATE_ERROR:
+
+		break;
+	}
 
 	//Apply New Frame
 	SDL_GL_SwapWindow(Graphics::window);
