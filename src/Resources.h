@@ -8,6 +8,11 @@ public:
 	static GSLTexture factoryBackground01;
 	static GSLTexture factoryBackground02;
 
+	//Objects
+	static GSLTexture pitFall;
+
+	//Entities
+	static GSLTexture bulletRed;
 
 	//Player
 	static GSLTexture playerIdle01;

@@ -15,6 +15,7 @@ AUTHORS: Oliver Hirschfield
 #include "Interface.h"
 #include "World.h"
 #include "Player.h"
+#include "Lasers.h"
 
 
 /* Main Fuctions */
@@ -67,6 +68,9 @@ void simulate() {
 
 		Player::control();
 		Player::move();
+
+		Lasers::move();
+
 		World::explore();
 
 		break;
@@ -92,8 +96,9 @@ void render() {
 
 		World::render();
 
-		Player::render();
+		Lasers::render();
 
+		Player::render();
 		Interface::renderUI();
 
 		break;

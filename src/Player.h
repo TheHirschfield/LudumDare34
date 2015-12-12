@@ -19,6 +19,9 @@ public:
 
 	//Access Methods
 	static int getHealth();
+	static void damageHealth();
+	static bool getJumping();
+	static void setMoving(bool go);
 
 private:
 

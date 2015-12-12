@@ -1,3 +1,8 @@
+/*
+PROJECT: Ludum Dare
+CREATED: 12th December 2015
+AUTHORS: Oliver Hirschfield
+*/
 
 #include "Interface.h"
 #include "Resources.h"

@@ -85,9 +85,11 @@
     <ClCompile Include="src\Engine\Timers.cpp" />
     <ClCompile Include="src\Engine\Window.cpp" />
     <ClCompile Include="src\Interface.cpp" />
+    <ClCompile Include="src\Lasers.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\Resources.cpp" />
+    <ClCompile Include="src\Pits.cpp" />
     <ClCompile Include="src\World.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -101,6 +103,8 @@
     <ClInclude Include="src\Engine\Timers.h" />
     <ClInclude Include="src\Engine\Window.h" />
     <ClInclude Include="src\Interface.h" />
+    <ClInclude Include="src\Lasers.h" />
+    <ClInclude Include="src\Pits.h" />
     <ClInclude Include="src\Player.h" />
     <ClInclude Include="src\Resources.h" />
     <ClInclude Include="src\World.h" />
