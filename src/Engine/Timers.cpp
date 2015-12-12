@@ -30,6 +30,10 @@ time_t Timers::getTime() {
 	return rawtime;
 }
 
+float Timers::compare(time_t t1, time_t t2) {
+
+	return -difftime(t1, t2);
+}
 
 std::string Timers::getDateString() {
 	char buffer[80];

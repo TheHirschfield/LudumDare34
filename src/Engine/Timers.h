@@ -14,6 +14,9 @@ public:
 	static std::string getDateString();
 	static std::string getTimeString();
 
+	//Compare Times
+	static float compare(time_t t1, time_t t2);
+
 	//Begin Time Management
 	static void start();
 	static void newStateTimer();
