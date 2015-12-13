@@ -7,6 +7,7 @@ AUTHORS: Oliver Hirschfield
 
 #include "World.h"
 #include "Resources.h"
+#include "Interface.h"
 #include "Player.h"
 #include "MrRobot.h"
 #include "Lasers.h"
@@ -146,6 +147,14 @@ bool World::set(int l) {
 	distance = 0.0;
 	endLevel = false;
 
+	//gameWon = false;
+
+
+	//For End of Game Reset
+	if (l == 1){
+		gameWon = false;
+	}
+
 	//Stop Going above Max Level
 	if (l > 5){
 		l = 5;
@@ -157,10 +166,10 @@ bool World::set(int l) {
 
 	switch (l){
 	case 1:
-		levelData = create(15, 7, readLevel("1"), readObjects("1"), readEnemies("1"));
+		levelData = create(15, 8, readLevel("1"), readObjects("1"), readEnemies("1"));
 		break;
 	case 2:
-		levelData = create(20, 8, readLevel("2"), readObjects("2"), readEnemies("2"));
+		levelData = create(20, 9, readLevel("2"), readObjects("2"), readEnemies("2"));
 		break;
 	case 3:
 		levelData = create(30, 10, readLevel("3"), readObjects("3"), readEnemies("3"));
@@ -265,6 +274,7 @@ void World::explore() {
 
 	//IF WIN GO BACK TO MENU IF SPACE
 	if (Controls::currentKeyStates[SDL_SCANCODE_SPACE] && World::gameFinished() && Player::getHealth() > 0){
+		Interface::setMenuTimeout(120);
 		Engine::changeState(STATE_MENU);
 	}
 

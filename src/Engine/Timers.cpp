@@ -12,6 +12,7 @@ AUTHORS: Oliver Hirschfield
 time_t Timers::clientStartTime;
 time_t Timers::stateStartTime;
 
+float Timers::deltaTime;
 
 double Timers::uptime;
 double Timers::stateTime;

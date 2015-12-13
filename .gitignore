@@ -190,3 +190,6 @@ ModelManifest.xml
 *.dll
 
 Plugins/*/
+*.zip
+*.exe
+Screens/Screen1.png

@@ -11,6 +11,7 @@ AUTHORS: Oliver Hirschfield
 #include "Engine\Graphics.h"
 #include "Engine\Audio.h"
 #include "Engine\Text.h"
+#include "Engine\Timers.h"
 
 
 /* Game Includes  */
@@ -27,6 +28,9 @@ void simulate();
 
 int main(int argc, char *argv[]) {
 
+	//Timers
+	int lastTime = 0;
+	float frameTimer = 0;
 
 	//Set Up Windows
 	Graphics::createSDLVideoContext();
@@ -47,11 +51,23 @@ int main(int argc, char *argv[]) {
 	//Main Game Loop
 	while (Engine::running){
 
-		Engine::run();
+		const float FRAME_TIME = 1.0f / 60.0f;
+		int dtMs = SDL_GetTicks() - lastTime;
+		Timers::deltaTime = FRAME_TIME;
+		frameTimer += dtMs / 1000.f;
+		bool updated = false;
 
-		simulate();
+		while (frameTimer >= FRAME_TIME){
+			Engine::run();
 
-		render();
+			frameTimer -= FRAME_TIME;
+			updated = true;
+		}
+
+		if (updated){
+			simulate();
+			render();
+		}
 
 	}
 

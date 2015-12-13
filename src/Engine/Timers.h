@@ -27,6 +27,7 @@ public:
 	static double getUptime();
 	static double getStatetime();
 
+	static float deltaTime;
 
 private:
 	//Timer Storage Variables

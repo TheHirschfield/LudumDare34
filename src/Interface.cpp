@@ -15,6 +15,8 @@ AUTHORS: Oliver Hirschfield
 #include "Engine\Controls.h"
 #include "Engine\Text.h"
 
+int Interface::menuTimeout;
+
 float robotHight = 0;
 int robotFloatDirection = 0;
 int controlFade = 360;
@@ -95,13 +97,18 @@ void Interface::renderUI() {
 	}
 }
 
-
 void Interface::controlUI() {
-
-	if (Controls::currentKeyStates[SDL_SCANCODE_SPACE]){
+	if (Controls::currentKeyStates[SDL_SCANCODE_SPACE] && menuTimeout == 0){
 		Engine::changeState(STATE_LOADING);
 	}
 
+	if (menuTimeout > 0){
+		menuTimeout--;
+	}
+}
+
+void Interface::setMenuTimeout(int t) {
+	menuTimeout = t;
 }
 
 
